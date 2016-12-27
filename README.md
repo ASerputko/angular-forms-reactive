@@ -1,8 +1,8 @@
 # Angular 2::Forms Reactive
 
-<a href="https://aserputko.github.io//angular-forms-reactive" target="_blank"><img src="https://aserputko.github.io//angular-forms-reactive/assets/images/demo.png"></a>
+<a href="https://aserputko.github.io/angular-forms-reactive" target="_blank"><img src="https://aserputko.github.io//angular-forms-reactive/assets/images/demo.png"></a>
 
-> Check out the [live demo](https://aserputko.github.io//angular-forms-reactive)!
+> Check out the [live demo](https://aserputko.github.io/angular-forms-reactive)!
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
