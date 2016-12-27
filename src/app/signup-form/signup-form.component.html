@@ -1,0 +1,76 @@
+<div class="container app-signup-form">
+  <form novalidate class="form-horizontal" (ngSubmit)="onSubmit(user)" [formGroup]="user">
+    <div class="form-group">
+      <label class="col-sm-2">
+        <span>Full name</span>
+      </label>
+      <div class="col-sm-10">
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          placeholder="Your full name"
+          formControlName="name">
+      </div>
+    </div>
+
+    <div
+      class="col-sm-offset-2 alert alert-danger"
+      *ngIf="user.get('name').hasError('required') && user.get('name').touched">
+      Name is required
+    </div>
+    <div
+      class="col-sm-offset-2 alert alert-danger"
+      *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">
+      Minimum of 2 characters
+    </div>
+
+    <div formGroupName="account">
+      <div class="form-group">
+        <label class="col-sm-2">
+          <span>Email address</span>
+        </label>
+        <div class="col-sm-10">
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            formControlName="email">
+          </div>
+      </div>
+
+      <div
+        class="col-sm-offset-2 alert alert-danger"
+        *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+        Email is required
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2">
+          <span>Confirm address</span>
+        </label>
+        <div class="col-sm-10">
+          <input
+            class="form-control"
+            type="email"
+            name="confirm"
+            placeholder="Confirm your email address"
+            formControlName="confirm">
+          </div>
+      </div>
+      <div
+        class="col-sm-offset-2 alert alert-danger"
+        *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
+        Confirming email is required
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="user.invalid">Sign up</button>
+      </div>
+    </div>
+  </form>
+</div>
